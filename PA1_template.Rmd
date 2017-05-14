@@ -62,7 +62,7 @@ This part analyzes the average number of steps on 5-minutes interval across all 
 
 1- Time series plot (5-minute interval averaged across all days):  we aggregate the given data for sum of steps per 5-minutes interval; and plot the result to show time series illustration.
 
-```{r Numberofsteps per interval, echo=TRUE}
+```{r Numberofsteps_per_interval, echo=TRUE}
 avr_steps_per_interval<-aggregate(dt$steps,list(interval=dt$interval),mean,na.rm=TRUE)
 
 with(avr_steps_per_interval, plot(interval,x,type="l",xlab = "5-minute Interval", ylab = "Averaged Steps Across All Days",main = "Time Series of \n 5-minute Interval vs. Average Steps in all Days"))

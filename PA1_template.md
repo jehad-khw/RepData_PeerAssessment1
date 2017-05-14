@@ -99,7 +99,7 @@ avr_steps_per_interval<-aggregate(dt$steps,list(interval=dt$interval),mean,na.rm
 with(avr_steps_per_interval, plot(interval,x,type="l",xlab = "5-minute Interval", ylab = "Averaged Steps Across All Days",main = "Time Series of \n 5-minute Interval vs. Average Steps in all Days"))
 ```
 
-![](PA1_template_files/figure-html/Numberofsteps per interval-1.png)<!-- -->
+![](PA1_template_files/figure-html/Numberofsteps_per_interval-1.png)<!-- -->
 
 2- The maximum number of average steps across days:
 
