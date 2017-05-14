@@ -66,7 +66,7 @@ g<- g + labs(x="Number of Steps Per day",y="Frequency",title="Total Steps per Da
 g + theme(axis.text.x = element_text(size=8,angle = 90))
 ```
 
-![](PA1_template_files/figure-html/Numberofsteps plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/Numberofsteps_plot-1.png)<!-- -->
 
 3-  Calculate mean and median of the total number of steps taken per day: 
 
@@ -194,7 +194,7 @@ g<- g + labs(x="Total number of Steps",y="Frequency",title="Total Steps per Date
 g + geom_histogram(bins = 30) + theme(axis.text.x = element_text(size=8,angle = 90))
 ```
 
-![](PA1_template_files/figure-html/Updated Numberofsteps plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/Updated_Numberofsteps_plot-1.png)<!-- -->
 
   4-2 Calculate mean and median of the new total number of steps taken per day: 
 
@@ -245,4 +245,4 @@ g<- g + labs(x= "5-minute Interval",y="Average Steps Per Day",title="Average Ste
 g + theme(plot.title = element_text(hjust = 0.5))
 ```
 
-![](PA1_template_files/figure-html/Plot of weekdays/weeksdays-1.png)<!-- -->
+![](PA1_template_files/figure-html/Plot_of_weekdays_weeksdays-1.png)<!-- -->
