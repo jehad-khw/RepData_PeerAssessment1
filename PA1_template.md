@@ -60,16 +60,9 @@ head(steps_per_day)
 
 ```r
 library(ggplot2)
-g<- ggplot(steps_per_day, aes(x=date, y = x))
-g<- g + geom_histogram(stat = 'identity') 
-```
-
-```
-## Warning: Ignoring unknown parameters: binwidth, bins, pad
-```
-
-```r
-g<- g + labs(x="Date",y="Number of Steps",title="Total Steps per Days")
+g<- ggplot(steps_per_day, aes(x=x))
+g <- g + geom_histogram(bins = 30)
+g<- g + labs(x="Number of Steps Per day",y="Frequency",title="Total Steps per Days")
 g + theme(axis.text.x = element_text(size=8,angle = 90))
 ```
 
@@ -196,13 +189,9 @@ head(udt,3)
 ```r
 steps_per_day<-aggregate(udt$steps_wNA,list(date=udt$date),sum,na.rm=TRUE)
 
-g<-ggplot(steps_per_day, aes(x=date, y = x))
-g<- g + labs(x="Total number of Steps",y="Date",title="Time Series of \n Total Steps per Date")
-g + geom_histogram(stat = 'identity') + theme(axis.text.x = element_text(size=8,angle = 90))
-```
-
-```
-## Warning: Ignoring unknown parameters: binwidth, bins, pad
+g<-ggplot(steps_per_day, aes(x=x))
+g<- g + labs(x="Total number of Steps",y="Frequency",title="Total Steps per Date")
+g + geom_histogram(bins = 30) + theme(axis.text.x = element_text(size=8,angle = 90))
 ```
 
 ![](PA1_template_files/figure-html/Updated Numberofsteps plot-1.png)<!-- -->
@@ -228,7 +217,7 @@ print(paste("Total Steps per day median =" , format(median(steps_per_day$x), dig
 
   4-3 Compare the result of the updated dataset versus the original dataset to illustrate the impact of replacing the missing values on the overall results:
   
-  Comparing the Histograms for both cases, we can notice that replacing NAs doesn't change the peaks which are days with highest number of steps. Replacing NAs fills the many gaps resulted from missing total steps. 
+  Comparing the Histograms for both cases, we can notice that replacing NAs doesn't change most of the peaks which are days with highest number of steps. A new peak can be noticed at the left of the updated dataset. 
   
   Comparing the mean/median values for both cases, we cannot see significant difference with (+13.6%) in the mean value, and (+5%) in the mean value.
   
